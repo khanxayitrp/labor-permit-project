@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Phetsarath;
+    src: url('/font/Phetsarath_OT.ttf');
+}
+body {
+    font-family: Phetsarath;
+    /*font-size: 14px;*/
+}
