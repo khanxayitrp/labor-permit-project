@@ -1,6 +1,6 @@
 <nav class="navbar-classic navbar navbar-expand-lg">
     <a id="nav-toggle" href="#"><i
-        data-feather="menu"
+        data-feather="circle"
 
         class="nav-icon me-2 icon-xs"></i></a>
     <div class="ms-lg-3 d-none d-md-none d-lg-block">
@@ -154,11 +154,15 @@
                   data-feather="settings"></i>Account Settings
               </a>
             </li> -->
-            <li>
-              <a class="dropdown-item" href="/dash-ui/php/logout.php">
-                <i class="me-2 icon-xxs dropdown-item-icon"
-                  data-feather="power"></i>Sign Out
-              </a>
+            <li>              
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                  <i class="me-2 icon-xxs dropdown-item-icon"
+                    data-feather="power"></i>Sign Out
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+                </form>
             </li>
           </ul>
 

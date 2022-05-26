@@ -9,14 +9,14 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/x-icon" href="{{ url('../assets/images/favicon/brand.ico')}}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon/brand.ico')}}">
 
 <!-- Libs CSS -->
 @include('csslib')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
-
+ 
 <!-- Theme CSS -->
-<link rel="stylesheet" href="{{ url('../assets/css/theme.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/theme.min.css') }}">
 
     <title>ໜ້າຫຼັກ</title>
 <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
@@ -43,16 +43,30 @@
 
     <!-- Scripts -->
     <!-- Libs JS -->
+
 @include('js')
 
 
 <!-- clipboard -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.12/clipboard.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+
+{{-- <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap4.min.js"></script> --}}
+
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 <!-- Theme JS -->
-<script src="{{ url('../assets/js/theme.min.js') }}"></script>
+<script src="{{ asset('assets/js/theme.min.js') }}"></script>
 
 @stack('js')
 

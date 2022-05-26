@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +15,18 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('login', 'HomeController@HomeIndex');
 /* 
 Route::get('/admin',function (){
-
     //echo 'hello world';
     return view('main.index');
 }); */
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'HomeController@adminHome')->name('admin.home');
+Route::get('/home',['as'=>'home', 'uses' => 'HomeController@index'])->middleware('auth');
+
+//Route::get('/admin', 'HomeController@adminHome');
+//Route::Post('/admin', 'HomeController@adminAdd');
+Route::resource('admin','UserController')->middleware('is_admin');
